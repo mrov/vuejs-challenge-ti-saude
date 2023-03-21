@@ -122,23 +122,6 @@ export default defineComponent({
       state.selectedUnicorn.colour = '';
     };
 
-    // const submitForm = async () => {
-    //   try {
-    //     UnicornService.createUnicorn({
-    //       name: state.name,
-    //       age: state.age,
-    //       color: state.color,
-    //     }).then((data) => {
-    //       console.log('Unicorn created:', data);
-    //       getUnicorns();
-    //     });
-    //     // Clear form fields after successful submission
-    //     clearForm();
-    //   } catch (error) {
-    //     console.error('Error creating unicorn:', error);
-    //   }
-    // };
-
     let openEditModal = (unicorn: IUnicorn | null = null) => {
       state.showEditModal = true;
       if (unicorn) {
@@ -171,7 +154,6 @@ export default defineComponent({
       ...toRefs(state),
       columns,
       getUnicorns,
-      // submitForm,
       openEditModal,
       hideEditModal,
       openDeleteModal,
