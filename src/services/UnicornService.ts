@@ -36,8 +36,10 @@ export default class UnicornService {
   public static updateUnicorn(
     unicorn: IUnicorn | null
   ): Promise<IUnicorn | null> {
+    const unicornId = unicorn?._id;
+    delete unicorn?._id;
     return axios
-      .put(`${API_URL}/${unicorn?._id}`, unicorn)
+      .put(`${API_URL}/${unicornId}`, unicorn)
       .then((response: AxiosResponse<IUnicorn>) => {
         return response.data;
       })
